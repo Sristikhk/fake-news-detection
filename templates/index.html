@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fake News Detection System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        📰 Fake News Detection
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/dashboard">Dashboard</a></li>
+
+       <li><a href="/about">About</a></li>
+
+       <li><a href="/developer">Developer</a></li>
+
+       <li>
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+</li>
+
+    </ul>
+
+</nav>
+
+<div class="container">
+
+    <h1>Fake News Detection System</h1>
+
+    <p>
+        AI-powered news verification using Machine Learning and NLP.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <textarea
+            name="news"
+            rows="10"
+            placeholder="Paste your news article here..."
+            required>{{ news if news else "" }}</textarea>
+
+        <div class="button-group">
+
+    <button type="submit" id="analyzeBtn">
+        <span id="btnText">Analyze News</span>
+        <span id="spinner" class="spinner"></span>
+    </button>
+
+    <button type="button" onclick="window.location='/'">
+        🔄 Reset
+    </button>
+
+</div>
+
+    </form>
+
+    {% if prediction %}
+
+<div class="result">
+
+    <h3>Prediction Result</h3>
+
+    <h2>{{ prediction }}</h2>
+
+    <p>
+        This prediction was generated using the trained
+        Linear SVM Machine Learning model.
+    </p>
+
+    <hr>
+
+    <p><strong>Total Words:</strong> {{ word_count }}</p>
+
+    <p><strong>Total Characters:</strong> {{ char_count }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<footer>
+    Developed by Sristi Khandoker | M.Sc. in CSE | Jagannath University
+</footer>
+
+<script>
+const darkBtn = document.getElementById("darkModeBtn");
+
+//Theme Restore
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    darkBtn.innerHTML = "☀️ Light Mode";
+}
+
+// Button Click
+darkBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        darkBtn.innerHTML = "☀️ Light Mode";
+    }else{
+        localStorage.setItem("theme","light");
+        darkBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+});
+</script>
+
+<script>
+
+const form = document.querySelector("form");
+const button = document.getElementById("analyzeBtn");
+
+form.addEventListener("submit", function(){
+
+    button.innerHTML = "⏳ Analyzing News...";
+
+    button.disabled = true;
+
+});
+
+</script>
+
+<script>
+
+const form=document.querySelector("form");
+
+const button=document.getElementById("analyzeBtn");
+
+const spinner=document.getElementById("spinner");
+
+const btnText=document.getElementById("btnText");
+
+form.addEventListener("submit",function(){
+
+    spinner.style.display="inline-block";
+
+    btnText.innerHTML="Analyzing...";
+
+    button.disabled=true;
+
+});
+
+</script>
+
+<script>
+
+const resetBtn = document.getElementById("resetBtn");
+
+resetBtn.addEventListener("click", function(){
+
+    // Textarea Empty
+    document.querySelector("textarea").value = "";
+
+    // Result Card Hidden
+    const result = document.querySelector(".result");
+
+    if(result){
+        result.style.display = "none";
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

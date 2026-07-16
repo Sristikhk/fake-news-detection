@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+📰 Fake News Detection
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/about">About</a></li>
+
+<li><a href="/developer">Developer</a></li>
+
+<li>
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+</li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Model Dashboard</h1>
+
+<table>
+
+<tr>
+<td><strong>Machine Learning Model</strong></td>
+<td>Linear SVM</td>
+</tr>
+
+<tr>
+<td><strong>Feature Extraction</strong></td>
+<td>TF-IDF</td>
+</tr>
+
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>99.04%</td>
+</tr>
+
+<tr>
+<td><strong>Dataset</strong></td>
+<td>ISOT Fake News Dataset</td>
+</tr>
+
+<tr>
+<td><strong>Language</strong></td>
+<td>English</td>
+</tr>
+
+<tr>
+    <td><strong>SVM Accuracy</strong></td>
+    <td>99.04%</td>
+</tr>
+
+<tr>
+    <td><strong>Random Forest Accuracy</strong></td>
+    <td>98.72%</td>
+</tr>
+
+<tr>
+    <td><strong>Logistic Regression Accuracy</strong></td>
+    <td>98.26%</td>
+</tr>
+
+<tr>
+    <td><strong>Naive Bayes Accuracy</strong></td>
+    <td>93.46%</td>
+<tr>
+    <td><strong>Status</strong></td>
+    <td>
+        <span style="color:#22c55e;">🟢 Active</span>
+    </td>
+</tr>
+
+</table>
+<h2>Best Performing Model</h2>
+
+<div class="result">
+
+    <h2>🏆 Linear SVM</h2>
+
+    <p>
+        Linear SVM achieved the highest accuracy of <strong>99.04%</strong>,
+        making it the best-performing model for this fake news detection system.
+    </p>
+
+</div>
+
+</div>
+
+<script>
+const darkBtn = document.getElementById("darkModeBtn");
+
+//Theme Restore
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    darkBtn.innerHTML = "☀️ Light Mode";
+}
+
+// Button Click
+darkBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        darkBtn.innerHTML = "☀️ Light Mode";
+    }else{
+        localStorage.setItem("theme","light");
+        darkBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+});
+</script>
+
+</body>
+
+</html>
