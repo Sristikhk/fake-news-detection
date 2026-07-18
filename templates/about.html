@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Project</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+📰 Fake News Detection
+
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/about">About</a></li>
+
+<li><a href="/developer">Developer</a></li>
+
+<li>
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+</li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+    <h1>About This Project</h1>
+
+    <p>
+        This web-based application detects whether a news article is Fake or Real
+        using Machine Learning and Natural Language Processing (NLP).
+    </p>
+
+    <hr>
+
+    <h2>Project Information</h2>
+
+    <p><strong>Project Title:</strong> Fake News Detection Using Machine Learning</p>
+
+    <p><strong>Developer:</strong> Sristi Khandoker</p>
+
+    <p><strong>Student ID:</strong> M240105023</p>
+
+    <p><strong>Program:</strong> M.Sc. in Computer Science & Engineering</p>
+
+    <p><strong>University:</strong> Jagannath University</p>
+
+    <p><strong>Supervisor:</strong> Dr. Sajeeb Saha</p>
+
+    <hr>
+
+    <h2>Technologies Used</h2>
+
+    <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>Machine Learning</li>
+        <li>Natural Language Processing (NLP)</li>
+        <li>TF-IDF Vectorizer</li>
+        <li>Linear SVM</li>
+        <li>Scikit-learn</li>
+        <li>spaCy</li>
+        <li>NLTK</li>
+
+    </ul>
+
+    <hr>
+
+    <h2>Dataset</h2>
+
+    <p>ISOT Fake News Dataset</p>
+
+    <hr>
+
+    <h2>Project Goal</h2>
+
+    <p>
+        To identify whether a news article is Fake or Real using Machine Learning
+        techniques and help reduce the spread of misinformation.
+    </p>
+
+</div>
+
+<script>
+const darkBtn = document.getElementById("darkModeBtn");
+
+//Theme Restore
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    darkBtn.innerHTML = "☀️ Light Mode";
+}
+
+// Button Click
+darkBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        darkBtn.innerHTML = "☀️ Light Mode";
+    }else{
+        localStorage.setItem("theme","light");
+        darkBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+});
+</script>
+
+</body>
+
+</html>

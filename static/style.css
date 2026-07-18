@@ -1,0 +1,573 @@
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#6a11cb);
+
+    min-height:100vh;
+
+    color:white;
+
+}
+
+/* Navigation */
+
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#FFD54F;
+
+}
+
+/* Main Container */
+
+.container{
+
+    width:80%;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+
+}
+
+/* Headings */
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:38px;
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+/* Text Area */
+
+textarea{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    resize:none;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+/* Button */
+
+button{
+
+    margin-top:20px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#00C853;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#00E676;
+
+    transform:scale(1.02);
+
+}
+
+/* Result Card */
+
+.result{
+
+    margin-top:30px;
+
+    background:white;
+
+    color:#222;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.result h2{
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+/* Table */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    background:white;
+
+    color:black;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+table td{
+
+    border:1px solid #ddd;
+
+    padding:15px;
+
+}
+
+table tr:nth-child(even){
+
+    background:#f5f5f5;
+
+}
+
+/* Footer */
+
+footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    padding:20px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+}
+/* ---------- Dark Mode ---------- */
+
+.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.dark nav{
+
+    background:#1f2937;
+
+}
+
+.dark .container{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark textarea{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark .result{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark table{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark table td{
+
+    color:white;
+
+}
+
+.dark footer{
+
+    background:#1f2937;
+
+}
+/* ===== Dark Mode Table Fix ===== */
+
+.dark table{
+    background:#1f2937 !important;
+    color:#ffffff !important;
+}
+
+.dark table tr{
+    background:#1f2937 !important;
+}
+
+.dark table tr:nth-child(even){
+    background:#374151 !important;
+}
+
+.dark table td{
+    color:#ffffff !important;
+    border:1px solid #4b5563 !important;
+}
+
+.dark table strong{
+    color:#ffffff !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p{
+    color:#ffffff !important;
+}
+/* ========= DARK MODE TABLE FIX ========= */
+
+.dark table{
+    width:100%;
+    border-collapse:collapse;
+    background:#1f2937 !important;
+    color:#ffffff !important;
+}
+
+.dark table tr{
+    background:#1f2937 !important;
+}
+
+.dark table tr:nth-child(even){
+    background:#374151 !important;
+}
+
+.dark table td{
+    background:transparent !important;
+    color:#ffffff !important;
+    border:1px solid #4b5563 !important;
+}
+
+.dark table strong{
+    color:#ffffff !important;
+}
+.container{
+
+    transition:.4s;
+
+}
+
+.container{
+
+    transition:.4s;
+
+}
+
+.container:hover{
+
+    transform:translateY(-6px);
+
+}
+
+button{
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    box-shadow:0 12px 25px rgba(0,0,0,.3);
+
+}
+
+table{
+
+    transition:.3s;
+
+}
+
+table:hover{
+
+    transform:scale(1.01);
+
+}
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.result{
+
+    animation:fadeIn .8s ease;
+
+}
+/* ===== Professional Dark Mode ===== */
+
+body{
+    transition:0.4s;
+}
+
+.container,
+nav,
+footer,
+.result,
+table,
+textarea,
+button{
+    transition:0.4s;
+}
+
+.dark{
+    background:#0f172a !important;
+    color:white;
+}
+
+.dark nav{
+    background:#111827 !important;
+}
+
+.dark .container{
+    background:#1e293b !important;
+    color:white !important;
+}
+
+.dark textarea{
+    background:#334155 !important;
+    color:white !important;
+    border:1px solid #475569;
+}
+
+.dark textarea::placeholder{
+    color:#d1d5db;
+}
+
+.dark .result{
+    background:#334155 !important;
+    color:white !important;
+}
+
+.dark table{
+    background:#1e293b !important;
+    color:white !important;
+}
+
+.dark table tr{
+    background:#1e293b !important;
+}
+
+.dark table tr:nth-child(even){
+    background:#334155 !important;
+}
+
+.dark table td{
+    color:white !important;
+    border:1px solid #475569 !important;
+}
+
+.dark table strong{
+    color:#ffffff !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p,
+.dark li{
+    color:white !important;
+}
+
+.dark footer{
+    background:#111827 !important;
+}
+
+/* ===== Loading Spinner ===== */
+
+.spinner{
+
+    display:none;
+
+    width:18px;
+
+    height:18px;
+
+    margin-left:10px;
+
+    border:3px solid rgba(255,255,255,.4);
+
+    border-top:3px solid white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ===== Button Group ===== */
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.button-group button{
+
+    flex:1;
+
+}
+
+/* Reset Button */
+
+#resetBtn{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+#resetBtn:hover{
+
+    background:#dc2626;
+
+}

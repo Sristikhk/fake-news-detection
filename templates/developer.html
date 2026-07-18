@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Developer</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+📰 Fake News Detection
+</div>
+
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/dashboard">Dashboard</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/developer">Developer</a></li>
+
+<li>
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+</li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Developer Profile</h1>
+
+<table>
+
+<tr>
+<td><strong>Name</strong></td>
+<td>Sristi Khandoker</td>
+</tr>
+
+<tr>
+<td><strong>Student ID</strong></td>
+<td>M240105023</td>
+</tr>
+
+<tr>
+<td><strong>Program</strong></td>
+<td>M.Sc. in Computer Science & Engineering</td>
+</tr>
+
+<tr>
+<td><strong>University</strong></td>
+<td>Jagannath University</td>
+</tr>
+
+<tr>
+<td><strong>Supervisor</strong></td>
+<td>Dr. Sajeeb Saha</td>
+</tr>
+
+<tr>
+<td><strong>Project</strong></td>
+<td>Fake News Detection Using Machine Learning</td>
+</tr>
+
+<tr>
+<td><strong>Technologies</strong></td>
+<td>Python, Flask, TF-IDF, Linear SVM, NLP, spaCy, NLTK</td>
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+Developed by Sristi Khandoker | M.Sc. in CSE | Jagannath University
+</footer>
+
+<script>
+const darkBtn = document.getElementById("darkModeBtn");
+
+//Theme Restore
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    darkBtn.innerHTML = "☀️ Light Mode";
+}
+
+// Button Click
+darkBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        darkBtn.innerHTML = "☀️ Light Mode";
+    }else{
+        localStorage.setItem("theme","light");
+        darkBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+});
+</script>
+</body>
+
+</html>
