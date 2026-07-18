@@ -10,8 +10,15 @@ from nltk.stem import WordNetLemmatizer
 # -------------------------
 # Download NLTK Data
 # -------------------------
-nltk.download("stopwords")
-nltk.download("wordnet")
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
+
+try:
+    nltk.data.find("corpora/wordnet")
+except LookupError:
+    nltk.download("wordnet")
 
 # -------------------------
 # Load SpaCy Model
