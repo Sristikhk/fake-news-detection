@@ -43,59 +43,38 @@ href="{{ url_for('static', filename='style.css') }}">
 
 <h1>Model Dashboard</h1>
 
-<table>
+<div class="info-cards">
 
-<tr>
-<td><strong>Machine Learning Model</strong></td>
-<td>Linear SVM</td>
-</tr>
+    <div class="info-card">
+        <h3>99.04%</h3>
+        <p>Accuracy</p>
+    </div>
 
-<tr>
-<td><strong>Feature Extraction</strong></td>
-<td>TF-IDF</td>
-</tr>
+ <div class="info-card">
+        <h3>Linear SVM</h3>
+        <p>Best Model</p>
+    </div>
 
-<tr>
-<td><strong>Accuracy</strong></td>
-<td>99.04%</td>
-</tr>
+    <div class="info-card">
+        <h3>44,898</h3>
+        <p>Dataset</p>
+    </div>
 
-<tr>
-<td><strong>Dataset</strong></td>
-<td>ISOT Fake News Dataset</td>
-</tr>
+    <div class="info-card">
+        <h3>English</h3>
+        <p>Language</p>
+    </div>
 
-<tr>
-<td><strong>Language</strong></td>
-<td>English</td>
-</tr>
+</div>
 
-<tr>
-    <td><strong>SVM Accuracy</strong></td>
-    <td>99.04%</td>
-</tr>
+<div class="chart-card">
 
-<tr>
-    <td><strong>Random Forest Accuracy</strong></td>
-    <td>98.72%</td>
-</tr>
+    <h2>📊 Model Performance Comparison</h2>
 
-<tr>
-    <td><strong>Logistic Regression Accuracy</strong></td>
-    <td>98.26%</td>
-</tr>
+    <canvas id="accuracyChart"></canvas>
 
-<tr>
-    <td><strong>Naive Bayes Accuracy</strong></td>
-    <td>93.46%</td>
-<tr>
-    <td><strong>Status</strong></td>
-    <td>
-        <span style="color:#22c55e;">🟢 Active</span>
-    </td>
-</tr>
+</div>
 
-</table>
 <h2>Best Performing Model</h2>
 
 <div class="result">
@@ -134,6 +113,222 @@ darkBtn.addEventListener("click", function(){
     }
 
 });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById("accuracyChart");
+
+new Chart(ctx,{
+
+    type:"bar",
+
+    data:{
+
+        labels:[
+            "Linear SVM",
+            "Random Forest",
+            "Logistic Regression",
+            "Naive Bayes"
+        ],
+
+        datasets:[{
+
+            label:"Accuracy (%)",
+
+            data:[
+                99.04,
+                98.72,
+                98.26,
+                93.46
+            ],
+
+            backgroundColor:[
+                "#E75480",
+                "#F48FB1",
+                "#F8BBD0",
+                "#FADADD"
+            ],
+
+            borderRadius:12
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        plugins:{
+            legend:{
+                display:false
+            }
+        },
+
+        scales:{
+
+            y:{
+
+                min:90,
+
+                max:100
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+<script>
+
+const ctx = document.getElementById("accuracyChart");
+
+new Chart(ctx, {
+
+    type: "bar",
+
+    data: {
+
+        labels: [
+            "Linear SVM",
+            "Random Forest",
+            "Logistic Regression",
+            "Naive Bayes"
+        ],
+
+        datasets: [{
+
+            label: "Accuracy (%)",
+
+            data: [99.04, 98.72, 98.26, 93.46],
+
+            backgroundColor: [
+
+                "#D6336C",
+                "#E75480",
+                "#F48FB1",
+                "#F8BBD0"
+
+            ],
+
+            borderColor: [
+
+                "#C2185B",
+                "#D6336C",
+                "#E75480",
+                "#F48FB1"
+
+            ],
+
+            borderWidth: 2,
+
+            borderRadius: 15,
+
+            borderSkipped: false,
+
+            barThickness: 55
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        animation: {
+
+            duration: 1800,
+
+            easing: "easeOutBounce"
+
+        },
+
+        plugins: {
+
+            legend: {
+
+                display: false
+
+            },
+
+            title: {
+
+                display: true,
+
+                text: "Machine Learning Model Accuracy",
+
+                color: "#D6336C",
+
+                font: {
+
+                    size: 22,
+
+                    weight: "bold"
+
+                }
+
+            }
+
+        },
+
+        scales: {
+
+            y: {
+
+                min: 90,
+
+                max: 100,
+
+                ticks: {
+
+                    color: "#666"
+
+                },
+
+                grid: {
+
+                    color: "#F4D7E3"
+
+                }
+
+            },
+
+            x: {
+
+                ticks: {
+
+                    color: "#555",
+
+                    font: {
+
+                        weight: "bold"
+
+                    }
+
+                },
+
+                grid: {
+
+                    display: false
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
 </script>
 
 </body>
