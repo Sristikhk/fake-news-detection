@@ -106,7 +106,7 @@ nav ul li a:hover{
 
     width:80%;
 
-    max-width:900px;
+    max-width:700px;
 
     margin:35px auto;
 
@@ -114,7 +114,7 @@ nav ul li a:hover{
 
     background:rgba(180,102,102,.92);
 
-    border-radius:35px;
+    border-radius:25px;
 
     box-shadow:0 15px 40px rgba(51,26,34,.15);
 
@@ -152,7 +152,7 @@ h2{
 
     font-size:20px;
 
-    margin-bottom:5px;
+    margin-bottom:10px;
 
 }
 
@@ -181,9 +181,9 @@ p{
 
 textarea{
 
-    width:100%;
+    width:95%;
 
-    height:200px;
+    height:80px;
 
     padding:15px;
 
@@ -284,7 +284,7 @@ button:hover{
 
     width:100%;
 
-    padding:15px;
+    padding:5px;
 
     border:none;
 
@@ -465,9 +465,9 @@ table strong{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 
-    gap:15px;
+    gap:20px;
 
     margin:25px 0;
 
@@ -479,9 +479,9 @@ table strong{
 
     background:#ffffff;
 
-    padding:10px;
+    padding:20px;
 
-    border-radius:12px;
+    border-radius:15px;
 
     text-align:center;
 
@@ -507,7 +507,7 @@ table strong{
 
     font-size:24px;
 
-    margin-bottom:5px;
+    margin-bottom:8px;
 
 }
 
@@ -515,9 +515,9 @@ table strong{
 
 .info-card p{
 
-    font-size:15px;
+    font-size:16px;
 
-    color:#494646;
+    color:#555;
 
 }
 
@@ -527,7 +527,7 @@ table strong{
 
 .chart-card{
 
-    background:#daadad;
+    background:#ffffff;
 
     padding:25px;
 
@@ -535,7 +535,7 @@ table strong{
 
     border-radius:15px;
 
-    box-shadow:0 8px 20px rgba(7, 1, 1, 0.15);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 
 }
 
@@ -545,7 +545,7 @@ table strong{
 
     text-align:center;
 
-    color:#7a4362;
+    color:#D6336C;
 
     font-size:24px;
 
@@ -561,7 +561,7 @@ table strong{
 
     width:100%;
 
-    max-height:250px;
+    max-height:300px;
 
 }
 
@@ -577,7 +577,7 @@ table strong{
 
     max-width:900px;
 
-    margin:25px auto;
+    margin:35px auto;
 
 }
 
@@ -585,13 +585,13 @@ table strong{
 
 .about-container h2{
 
-    font-size:20px;
+    font-size:24px;
 
     color:#ffffff;
 
-    margin-top:15px;
+    margin-top:25px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
@@ -601,7 +601,7 @@ table strong{
 
     font-size:16px;
 
-    line-height:1.5;
+    line-height:1.7;
 
     margin-bottom:10px;
 
@@ -613,15 +613,15 @@ table strong{
 
 .project-info{
 
-    margin-bottom:5px;
+    margin-bottom:25px;
 
 }
 
 .project-info p{
 
-    font-size:15px;
+    font-size:16px;
 
-    line-height:1.5;
+    line-height:1.8;
 
 }
 
@@ -631,19 +631,19 @@ table strong{
 
 .about-container ul{
 
-    margin-left:5px;
+    margin-left:25px;
 
-    margin-bottom:10px;
+    margin-bottom:20px;
 
 }
 
 .about-container ul li{
 
-    font-size:15px;
+    font-size:16px;
 
-    line-height:1.5;
+    line-height:1.8;
 
-    margin-bottom:5px;
+    margin-bottom:8px;
 
 }
 
@@ -653,7 +653,7 @@ table strong{
 
 .dataset{
 
-    margin-top:10px;
+    margin-top:15px;
 
 }
 
@@ -663,7 +663,7 @@ table strong{
 
 .project-goal{
 
-    margin-top:10px;
+    margin-top:20px;
 
 }
 
@@ -673,17 +673,17 @@ table strong{
 
 footer{
 
-    margin-top:10px;
+    margin-top:40px;
 
     padding:15px;
 
     text-align:center;
 
-    color:#0e0d0d;
+    color:#ffffff;
 
     font-size:15px;
 
-    background:rgba(10, 10, 10, 0.15);
+    background:rgba(0,0,0,.15);
 
     border-top:1px solid rgba(255,255,255,.2);
 
